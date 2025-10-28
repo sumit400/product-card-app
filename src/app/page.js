@@ -1,12 +1,10 @@
 import HomeClient from './components/HomeClient';
 
 export default async function Home() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/products`,
-    {
-      cache: 'no-store',
-    }
-  );
+const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/products`, {
+  cache: "no-store",
+});
+
 
   if (!res.ok) {
     console.error('Failed to fetch products');
